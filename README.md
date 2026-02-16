@@ -19,15 +19,15 @@ This project predicts whether a client will subscribe to a bank term deposit bas
 ## 🗄️ Phase 1: Data Engineering (MySQL Workbench)
 I performed the initial heavy lifting in SQL to ensure the dataset was clean and augmented with meaningful features before any modeling took place.
 
-## 🛡️ Data Preservation & Staging
+### 🛡️ Data Preservation & Staging
 Multi-Stage Backups: I implemented a staging workflow by creating bank_additional_staging and bank_additional_staging2 to perform transformations while keeping the original source data untouched.
 
-## 🧹 Data Cleaning & Quality Audit
+### 🧹 Data Cleaning & Quality Audit
 - Deduplication: Identified and removed duplicate records by partitioning over 20 unique features using ROW_NUMBER().
 - Standardization: Conducted a quality audit using SELECT DISTINCT and LENGTH() to find spelling inconsistencies.
 - Uniform Casing: Standardized all categorical columns (Job, Marital, Education, etc.) to lowercase using LOWER() to ensure consistent grouping.
 
-## 🧪 Feature Engineering
+### 🧪 Feature Engineering
 I engineered several composite features to provide stronger signals for the models:
 - financial_stress: A sum of credit default, housing, and personal loan status (mapped to 1 if 'yes') to measure total debt burden.
 - economic_index: A composite score of employment variation rate, consumer confidence, and the euribor 3-month rate.
